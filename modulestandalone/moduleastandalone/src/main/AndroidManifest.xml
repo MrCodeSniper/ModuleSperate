@@ -2,7 +2,9 @@
     package="com.stream.chenhong.moduleastandalone" >
 
 
-    <application>
+    <application
+        android:name="com.stream.chenhong.moduleastandalone.ModuleaStandaloneApplicaiton"
+        >
 
 
         <activity android:name="com.stream.chenhong.modulea.ModuleaActivity">

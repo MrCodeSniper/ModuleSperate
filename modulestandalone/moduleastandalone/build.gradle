@@ -6,6 +6,7 @@ android {
 
 
     defaultConfig {
+        applicationId "com.stream.chenhong.moduletesta"
         minSdkVersion 15
         targetSdkVersion 27
         versionCode 1
@@ -26,7 +27,7 @@ android {
 
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
-
+    implementation "io.github.prototypez:app-joint-core:1.4"
     implementation 'com.android.support:appcompat-v7:27.1.1'
     implementation project(':modulea')
     androidTestImplementation 'com.android.support.test:runner:1.0.2'
