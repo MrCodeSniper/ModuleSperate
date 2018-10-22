@@ -1,4 +1,4 @@
-include ':app', ':modulestandalone:moudleqrcodestandalone',
+include ':app', ':modulestandalone:moudleqrcodestandalone', ':logan',
         ':modulea',
         ':moduleb',
         ':modulestandalone:moduleastandalone',

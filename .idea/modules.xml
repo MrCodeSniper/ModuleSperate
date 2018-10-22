@@ -2,12 +2,15 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/ModuleTest.iml" filepath="$PROJECT_DIR$/ModuleTest.iml" />
+      <module fileurl="file://$PROJECT_DIR$/TestProject.iml" filepath="$PROJECT_DIR$/TestProject.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/logan/logan.iml" filepath="$PROJECT_DIR$/logan/logan.iml" />
       <module fileurl="file://$PROJECT_DIR$/modulea/modulea.iml" filepath="$PROJECT_DIR$/modulea/modulea.iml" />
       <module fileurl="file://$PROJECT_DIR$/modulestandalone/moduleastandalone/moduleastandalone.iml" filepath="$PROJECT_DIR$/modulestandalone/moduleastandalone/moduleastandalone.iml" />
       <module fileurl="file://$PROJECT_DIR$/moduleb/moduleb.iml" filepath="$PROJECT_DIR$/moduleb/moduleb.iml" />
       <module fileurl="file://$PROJECT_DIR$/modulestandalone/modulestandalone.iml" filepath="$PROJECT_DIR$/modulestandalone/modulestandalone.iml" />
+      <module fileurl="file://$PROJECT_DIR$/modulestandalone/moudleqrcodestandalone/moudleqrcodestandalone.iml" filepath="$PROJECT_DIR$/modulestandalone/moudleqrcodestandalone/moudleqrcodestandalone.iml" />
+      <module fileurl="file://$PROJECT_DIR$/qrcode/qrcode.iml" filepath="$PROJECT_DIR$/qrcode/qrcode.iml" />
       <module fileurl="file://$PROJECT_DIR$/router/router.iml" filepath="$PROJECT_DIR$/router/router.iml" />
     </modules>
   </component>

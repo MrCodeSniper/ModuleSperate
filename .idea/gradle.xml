@@ -3,17 +3,19 @@
   <component name="GradleSettings">
     <option name="linkedExternalProjectsSettings">
       <GradleProjectSettings>
-        <option name="distributionType" value="LOCAL" />
+        <option name="distributionType" value="DEFAULT_WRAPPED" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
-        <option name="gradleHome" value="D:\android\gradle\gradle-4.1" />
         <option name="modules">
           <set>
             <option value="$PROJECT_DIR$" />
             <option value="$PROJECT_DIR$/app" />
+            <option value="$PROJECT_DIR$/logan" />
             <option value="$PROJECT_DIR$/modulea" />
             <option value="$PROJECT_DIR$/moduleb" />
             <option value="$PROJECT_DIR$/modulestandalone" />
             <option value="$PROJECT_DIR$/modulestandalone/moduleastandalone" />
+            <option value="$PROJECT_DIR$/modulestandalone/moudleqrcodestandalone" />
+            <option value="$PROJECT_DIR$/qrcode" />
             <option value="$PROJECT_DIR$/router" />
           </set>
         </option>
