@@ -1,7 +1,9 @@
 package com.stream.chenhong.router;
 
+import android.content.Context;
 import android.database.Observable;
-import android.os.Handler;
+
+import com.stream.chenhong.callback.Callback;
 
 /**
  * 所有业务模块希望暴露给其它模块调用的方法
@@ -25,5 +27,5 @@ public interface  AppRouter {
      */
     void asyncMethod2OfApp(Callback<String> callback);
 
-
+    void  startQrCodeActivity(Context context);
 }
