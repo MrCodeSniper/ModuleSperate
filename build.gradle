@@ -18,7 +18,14 @@ buildscript {
 allprojects {
     repositories {
         google()
+        mavenCentral()
         jcenter()
+        maven { url "https://jitpack.io" }
+        maven { url "https://oss.sonatype.org/content/repositories/snapshots" }
+        maven { url "http://repo.baichuan-android.taobao.com/content/groups/BaichuanRepositories/" }
+        maven { url "http://mvn.gt.igexin.com/nexus/content/repositories/releases/" }
+        //添加 Sensors Analytics maven 库地址
+        maven { url 'https://dl.bintray.com/zouyuhan/maven'}
         maven(){
             url "http://127.0.0.1:8081/repository/maven-releases/"
         }

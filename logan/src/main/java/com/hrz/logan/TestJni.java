@@ -6,6 +6,13 @@ package com.hrz.logan;
 
 
 public class TestJni {
+
+
+    static {
+        System.loadLibrary("jni_lib");
+    }
+
+
     public native int init(String cache_path, String dir_path, int max_file,
                                   String encrypt_key_16, String encrypt_iv_16);
 }

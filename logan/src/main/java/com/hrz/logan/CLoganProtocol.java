@@ -26,9 +26,9 @@ import java.util.Collections;
 import java.util.HashSet;
 import java.util.Set;
 
-class CLoganProtocol implements LoganProtocolHandler {
+public class CLoganProtocol implements LoganProtocolHandler {
 
-    private static final String LIBRARY_NAME = "logan";
+    private static final String LIBRARY_NAME = "jni_lib";
 
     private static CLoganProtocol sCLoganProtocol;
     private static boolean sIsCloganOk;

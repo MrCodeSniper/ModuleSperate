@@ -5,15 +5,11 @@ package com.hrz.moudleqrcodestandalone;
 //Code Programming By MrCodeSniper on 2018/10/22.Best Wishes to You!  []~(~▽~)~* Cheers!
 
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
-import android.widget.Toast;
 
-import com.google.zxing.interf.OnTestClickListener;
 import com.google.zxing.self.util.StatusBarUtil;
-import com.google.zxing.view.CapturePage;
-import com.stream.chenhong.modulea.ModuleaActivity;
+import com.hrz.xsh.page.AlliancePage;
 
 public class QrcodeTestActivity extends BaseLifecycleActivity {
 
@@ -21,15 +17,18 @@ public class QrcodeTestActivity extends BaseLifecycleActivity {
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         StatusBarUtil.setStatusBarTransparent(this);
-        CapturePage capturePage=new CapturePage(this,new CaptureReceiver());
-        capturePage.setClickListener(new OnTestClickListener() {
-            @Override
-            public void test() {
-                Toast.makeText(QrcodeTestActivity.this,"xxx",Toast.LENGTH_LONG).show();
-                startActivity(new Intent(QrcodeTestActivity.this, ModuleaActivity.class));
-            }
-        });
-        setContentView(capturePage);
+//        CapturePage capturePage=new CapturePage(this,new CaptureReceiver());
+//        capturePage.setClickListener(new OnTestClickListener() {
+//            @Override
+//            public void test() {
+//                Toast.makeText(QrcodeTestActivity.this,"xxx",Toast.LENGTH_LONG).show();
+//                startActivity(new Intent(QrcodeTestActivity.this, ModuleaActivity.class));
+//            }
+//        });
+
+
+        AlliancePage alliancePage=new AlliancePage(this,null);
+        setContentView(alliancePage);
     }
 
 

@@ -75,6 +75,7 @@ class LoganProtocol implements LoganProtocolHandler {
         if (CLoganProtocol.isCloganSuccess()) {
             mCurProtocol = CLoganProtocol.newInstance();
             mCurProtocol.setOnLoganProtocolStatus(mLoganProtocolStatus);
+
             mCurProtocol.logan_init(cache_path, dir_path, max_file, encrypt_key_16, encrypt_iv_16);
             mIsInit = true;
         } else {

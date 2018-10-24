@@ -31,6 +31,7 @@ dependencies {
     androidTestImplementation 'com.android.support.test:runner:1.0.2'
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
     implementation project(path: ':qrcode')
+    implementation project(path: ':xsh')
     implementation project(":router")
   //  compile 'module.chenhong.com:testmodule:1.0.0@aar'
     implementation project(":modulea")

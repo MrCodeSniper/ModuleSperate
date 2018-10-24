@@ -12,6 +12,7 @@
       <module fileurl="file://$PROJECT_DIR$/modulestandalone/moudleqrcodestandalone/moudleqrcodestandalone.iml" filepath="$PROJECT_DIR$/modulestandalone/moudleqrcodestandalone/moudleqrcodestandalone.iml" />
       <module fileurl="file://$PROJECT_DIR$/qrcode/qrcode.iml" filepath="$PROJECT_DIR$/qrcode/qrcode.iml" />
       <module fileurl="file://$PROJECT_DIR$/router/router.iml" filepath="$PROJECT_DIR$/router/router.iml" />
+      <module fileurl="file://$PROJECT_DIR$/xsh/xsh.iml" filepath="$PROJECT_DIR$/xsh/xsh.iml" />
     </modules>
   </component>
 </project>

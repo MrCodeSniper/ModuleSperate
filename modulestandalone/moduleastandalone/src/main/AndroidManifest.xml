@@ -7,7 +7,7 @@
         >
 
 
-        <activity android:name="com.stream.chenhong.modulea.ModuleaActivity">
+        <activity android:name="com.stream.chenhong.moduleastandalone.MainActivity">
 
 
             <intent-filter>

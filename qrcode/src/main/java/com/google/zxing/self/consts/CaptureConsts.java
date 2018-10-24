@@ -11,10 +11,12 @@ public class CaptureConsts {
         public static final String CAPTURE_RESULT="capture_result";
         public static final String CAPTURE_ACTION="com.mujirenben.liangchenbufu.CaptureReceiver";
 
-    //返回码含义
+         //返回码含义
 
         public static final int SUCCESS=10000;
         public static final int UNKNOW_ERROR=10001;
+
+
         public static final int UNLOGIN=10002;
 
         public static final int UNFIND_MERCHANT=11001;
