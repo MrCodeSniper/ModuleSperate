@@ -35,7 +35,6 @@ public interface AllianceService {
     Call<AllianceBanner> getAllianceBanner(@Query("clientType") int clientType, @Query("v") String v);
 
     @GET("/xdz/shop/{v}/home/list/full")
-//    Observable<AllianceHomeShopsEntity> getAllianceHomeShops(@Query("v") String v, @Query("page") int page, @Query("pageSize") int pageSize, @Query("industryId") Integer industryId, @Query("city") String city, @Query("isCoupon") Integer isCoupon, @Query("latitude") Double latitude, @Query("longitude") Double longitude, @Query("minDistance") Integer minDistance, @Query("maxDistance") Integer maxDistance, @Query("coordinatesType") Integer coordinatesType);
     Observable<AllianceHomeShopsEntity> getAllianceHomeShops(@QueryMap Map<String, String> options);
 
     @GET("/xdz/shop/city/123/cities/list")

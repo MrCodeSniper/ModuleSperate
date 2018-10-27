@@ -1,4 +1,4 @@
-include ':app', ':modulestandalone:moudleqrcodestandalone', ':logan', ':xsh',
+include ':app', ':modulestandalone:moudleqrcodestandalone', ':logan', ':xsh',':poplayer_module',
         ':modulea',
         ':moduleb',
         ':modulestandalone:moduleastandalone',

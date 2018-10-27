@@ -21,17 +21,24 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.FrameLayout;
 
+import com.chad.library.adapter.base.BaseQuickAdapter;
 import com.hrz.xsh.R;
 import com.hrz.xsh.adapter.XshShopAdapter;
 import com.hrz.xsh.controller.AlliaceController;
 import com.hrz.xsh.entity.AllianceHomeShopsEntity;
 import com.hrz.xsh.receiver.ICaptureReceiver;
+import com.hrz.xsh.view.HrzHeadersView;
 import com.hrz.xsh.view.SpaceItemDecoration;
 
 import java.lang.ref.WeakReference;
 import java.util.HashMap;
 import java.util.Map;
 
+import in.srain.cube.views.ptr.PtrDefaultHandler;
+import in.srain.cube.views.ptr.PtrFrameLayout;
+import in.srain.cube.views.ptr.PtrHandler;
+import in.srain.cube.views.ptr.PtrUIHandler;
+import in.srain.cube.views.ptr.indicator.PtrIndicator;
 import io.reactivex.Observable;
 
 import static com.hrz.xsh.consts.XshConstant.CAPTURE_RESULT;
@@ -40,7 +47,7 @@ import static com.hrz.xsh.consts.XshConstant.XSH_ACTION;
 /**
  *  block用来通信 生命周期的观察者
  */
-public class AllianceBlock extends FrameLayout implements LifecycleObserver {
+public class AllianceBlock extends FrameLayout implements LifecycleObserver,PtrHandler,PtrUIHandler,BaseQuickAdapter.RequestLoadMoreListener {
 
     public static final String TAG=AllianceBlock.class.getSimpleName();
 
@@ -51,6 +58,7 @@ public class AllianceBlock extends FrameLayout implements LifecycleObserver {
     private WeakReference<ICaptureReceiver> receiver;
     private Context mContext;
     private XshShopAdapter xshShopAdapter;
+    private HrzHeadersView hrzHeadersView;
 
 
     public AllianceBlock(Context context,  ICaptureReceiver iCaptureReceiver,EditTypeFactory editTypeFactory) {
@@ -68,6 +76,9 @@ public class AllianceBlock extends FrameLayout implements LifecycleObserver {
 
     @OnLifecycleEvent(Lifecycle.Event.ON_CREATE)
     public void onCreate(){
+
+
+
         View view= LayoutInflater.from(getContext()).inflate(R.layout.xsh_alliance_page_xml,null);
         addView(view,new LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT));
         initEventPoster();
@@ -117,16 +128,18 @@ public class AllianceBlock extends FrameLayout implements LifecycleObserver {
 
     private void initPreView() {
         RecyclerView xshRvShop=findViewById(R.id.xsh_rv_shop);
+        hrzHeadersView=findViewById(R.id.ptr);
         xshRvShop.setLayoutManager(new LinearLayoutManager(mContext, LinearLayoutManager.VERTICAL, false));
         xshRvShop.setFocusable(false);
         xshRvShop.addItemDecoration(new SpaceItemDecoration(0));
         xshShopAdapter=new XshShopAdapter(R.layout.recycleview_item_home_shop);
         xshRvShop.setAdapter(xshShopAdapter);
+        hrzHeadersView.setPtrHandler(this);
+//        mPTR.setViewPager(mHeader.findViewById(R.id.banner));
+        hrzHeadersView.addPtrUIHandler(this);
+        xshShopAdapter.setOnLoadMoreListener(this, xshRvShop);
+
     }
-
-
-
-
 
     /**
      *   发送本地广播
@@ -138,10 +151,55 @@ public class AllianceBlock extends FrameLayout implements LifecycleObserver {
         LocalBroadcastManager.getInstance(mContext).sendBroadcast(intent);
     }
 
+    @Override
+    public boolean checkCanDoRefresh(PtrFrameLayout frame, View content, View header) {
+        return PtrDefaultHandler.checkContentCanBePulledDown(frame, content, header);
+    }
 
+    @Override
+    public void onRefreshBegin(PtrFrameLayout frame) {
+        frame.postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                alliaceController.load(getRequestMap());
+                hrzHeadersView.refreshComplete();
+            }
+        },1000);
+    }
+
+    @Override
+    public void onUIReset(PtrFrameLayout frame) {
+
+    }
+
+    @Override
+    public void onUIRefreshPrepare(PtrFrameLayout frame) {
+
+    }
+
+    @Override
+    public void onUIRefreshBegin(PtrFrameLayout frame) {
+
+    }
+
+    @Override
+    public void onUIRefreshComplete(PtrFrameLayout frame) {
+
+    }
+
+    @Override
+    public void onUIPositionChange(PtrFrameLayout frame, boolean isUnderTouch, byte status, PtrIndicator ptrIndicator) {
+
+    }
+
+    @Override
+    public void onLoadMoreRequested() {
+        Log.e("xxx","xxx");
+    }
 
 
     public  interface EditTypeFactory{
+
         //Get方法
         Observable getSubmitObservable(Context context, Map<String, String> options);
 
