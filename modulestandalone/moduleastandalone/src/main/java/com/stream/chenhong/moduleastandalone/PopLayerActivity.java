@@ -8,40 +8,58 @@ package com.stream.chenhong.moduleastandalone;
 import android.app.Activity;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
+import android.support.v7.widget.GridLayoutManager;
+import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.webkit.WebView;
 
 import com.mujirenben.android.poplayer.HrzLayerView;
 import com.mujirenben.android.poplayer.config.LayerConfig;
 import com.mujirenben.android.poplayer.impl.WebConfigImpl;
-
+import com.mujirenben.android.poplayer.interfaces.PopWebViewListener;
+import com.mujirenben.android.poplayer.webview.PopWebViewJsInterface;
+import com.mujirenben.android.poplayer.webview.PopWebViewService;
 
 import org.json.JSONObject;
 
 import java.lang.reflect.Method;
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Iterator;
+import java.util.List;
 import java.util.Map;
 import java.util.regex.Pattern;
 
-import com.mujirenben.android.poplayer.interfaces.PopWebViewListener;
-import com.mujirenben.android.poplayer.webview.*;
 import static com.mujirenben.android.poplayer.HrzLayerView.STATE_WEBVIEW;
 
 public class PopLayerActivity extends Activity implements PopWebViewListener {
 
     private HrzLayerView hrzLayerView;
+    private RecyclerView rv;
+    private List mDatas;
+
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_poplayer);
+        rv=findViewById(R.id.rv);
         findViewById(R.id.btn_show).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 showRedPocketView();
             }
         });
+
+            mDatas = new ArrayList<String>();
+            for (int i = 0; i < 10; i++) {
+                mDatas.add("" +  i);
+            }
+
+
+        rv.setLayoutManager(new GridLayoutManager(this,5));
+        rv.setAdapter(new TestAdapter(this,mDatas));
+
 
     }
 

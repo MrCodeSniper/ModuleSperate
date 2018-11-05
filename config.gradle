@@ -1,0 +1,47 @@
+ext{
+
+    supportLibrary="26.1.0"
+
+    android=[
+          appId:"com.stream.chenhong.moduletest",
+          compileSdkVersion:26,
+          minSdkVersion:16,
+          targetSdkVersion:26,
+          buildToolVersions:"26.0.3",
+          versionCode:1,
+          versionName:"1.0.0"
+    ]
+
+    url=[
+            //测试服务器地址
+         "debug":"http://test.com",
+            //正式服务器地址
+         "release":"https://hdyl.com"
+
+    ]
+
+
+    imgUrl=[
+
+            //测试图片服务器地址
+            "debug":"http://test.com",
+            //正式图片服务器地址
+            "release":"https://hdyl.com"
+    ]
+
+
+
+    dependencies = [
+
+            "recyclerview" : "com.android.support:recyclerview-v7:{supportLibrary}",
+
+
+    ]
+
+
+
+
+
+
+
+}
